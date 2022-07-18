@@ -40,11 +40,40 @@ async def ban(ctx, user: discord.Member, *, reason = None):
 
 @pomoci.command(name="unban", help="command to unban user")
 @commands.has_permissions(administrator=True)
-async def _unban(ctx, *, member_id: int):
+async def unban(ctx, *, member_id: int):
     """ command to unban user. check !help unban """
     await ctx.guild.unban(discord.Object(id=member_id))
     unbanemd = discord.Embed(title = "Unban", description = f"{member_id}  was unbanned  by {ctx.author.mention} ")
     await ctx.send(embed=unbanemd)
+
+
+
+@pomoci.command()
+async def ce(ctx):
+    def check(message):
+      return message.author == ctx.author and message.channel == ctx.channel
+    
+
+    
+    await ctx.send('Enter your title.\nPut `none` if you do not want anything in this section.')
+    title = await pomoci.wait_for("message", timeout = 300.0, check=check)
+    title = title.content
+    if title == "none":
+      title = "** **" # it will still be empty but not give an empty error message
+    else:
+      title = title
+
+    
+    await ctx.send('Enter your title.\nPut `none` if you do not want anything in this section.')
+    desc = await pomoci.wait_for("message", timeout = 300.0, check=check)
+    desc = desc.content
+    if desc == "none":
+      desc = "** **"
+    else:
+      desc = desc
+
+    embed = discord.Embed(title=title, description=desc, color=0xa9e9e9)
+    await ctx.send(embed=embed)
 
 
 
