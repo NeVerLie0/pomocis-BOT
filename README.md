@@ -1,4 +1,4 @@
-# simple-ban-kick-unban-bot
+# POMOCIS BOT
 
 ## Setup :
 just paste ur token in the .env file 
