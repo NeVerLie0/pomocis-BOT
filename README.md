@@ -4,7 +4,7 @@
 just paste ur token in the .env file 
 then just type ```py main.py```
 
-##what u need: 
+## what u need: 
 https://www.python.org/downloads/
 
 ##info
