@@ -8,4 +8,4 @@ then just type ```py main.py```
 https://www.python.org/downloads/
 
 ## info :
-coded by : K.dots's bitch#9663
+coded by : Backy-Fosy#9663
